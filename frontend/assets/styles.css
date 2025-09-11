@@ -1,0 +1,198 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+header {
+  background: #fff;
+  padding: 24px 32px 8px 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #2c3e50;
+}
+header p {
+  margin: 4px 0 16px 0;
+  color: #555;
+}
+nav {
+  margin-bottom: 16px;
+}
+nav button {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 18px;
+  margin-right: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+nav button:hover {
+  background: #e9ecef;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.search-bar input {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.search-bar a {
+  color: #2c3e50;
+  text-decoration: none;
+  margin-right: 8px;
+  font-weight: 500;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 32px;
+}
+.auditorias-recientes {
+  flex: 2;
+  min-width: 480px;
+}
+.auditorias-recientes h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+.auditorias-recientes table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 16px;
+}
+.auditorias-recientes th, .auditorias-recientes td {
+  padding: 10px 12px;
+  text-align: left;
+}
+.auditorias-recientes th {
+  background: #f4f4f4;
+  font-weight: 600;
+}
+.auditorias-recientes tr {
+  border-bottom: 1px solid #eee;
+}
+.progress {
+  background: #ccc;
+  border-radius: 6px;
+  height: 16px;
+  width: 100px;
+  overflow: hidden;
+  display: inline-block;
+}
+.progress-bar {
+  background: #218838;
+  height: 100%;
+  border-radius: 6px 0 0 6px;
+  transition: width 0.3s;
+}
+.progress-bar[data-width="40"] { width: 40%; }
+.progress-bar[data-width="60"] { width: 60%; }
+.progress-bar[data-width="100"] { width: 100%; }
+
+.hallazgos-criticos {
+  flex: 1;
+  min-width: 320px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.hallazgos-criticos h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+.hallazgo {
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+.hallazgo .estado {
+  float: right;
+  font-size: 0.95em;
+  color: #218838;
+  font-weight: 500;
+}
+.hallazgos-criticos a {
+  display: block;
+  text-align: right;
+  color: #2c3e50;
+  text-decoration: underline;
+  font-size: 0.95em;
+}
+
+.checklist {
+  width: 100%;
+  margin-top: 32px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 16px;
+}
+.checklist h2 {
+  font-size: 1.1rem;
+}
+.checklist details {
+  margin-bottom: 8px;
+}
+.checklist summary {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.login {
+  width: 320px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 16px;
+  margin-top: 32px;
+}
+.login h2 {
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+.login form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.login input {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.login button {
+  background: #218838;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.login button:hover {
+  background: #18632a;
+}

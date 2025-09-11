@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capacitaciones | Auditorías ISO 9001</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Capacitaciones</h1>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="empresas.html">Empresas</a>
+      <a href="auditorias.html">Auditorías</a>
+      <a href="implementaciones.html">Implementaciones</a>
+      <a href="usuarios.html">Usuarios</a>
+    </nav>
+  </header>
+  <main>
+    <section class="capacitaciones-list">
+      <h2>Listado de capacitaciones</h2>
+      <table id="tablaCapacitaciones">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Empresa</th>
+            <th>Tema</th>
+            <th>Fecha</th>
+            <th>Responsable</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se cargarán las capacitaciones -->
+        </tbody>
+      </table>
+    </section>
+    <section class="capacitaciones-form">
+      <h2>Registrar nueva capacitación</h2>
+      <form id="formCapacitacion">
+        <input type="number" name="empresa_id" placeholder="ID Empresa" required>
+        <input type="text" name="tema" placeholder="Tema" required>
+        <input type="date" name="fecha" required>
+        <input type="text" name="responsable" placeholder="Responsable" required>
+        <input type="text" name="observaciones" placeholder="Observaciones">
+        <button type="submit">Registrar</button>
+      </form>
+    </section>
+  </main>
+  <script src="../assets/capacitaciones.js"></script>
+</body>
+</html>

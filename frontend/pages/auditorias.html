@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auditorías | Auditorías ISO 9001</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Auditorías</h1>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="empresas.html">Empresas</a>
+      <a href="capacitaciones.html">Capacitaciones</a>
+      <a href="implementaciones.html">Implementaciones</a>
+      <a href="usuarios.html">Usuarios</a>
+    </nav>
+  </header>
+  <main>
+    <section class="auditorias-list">
+      <h2>Listado de auditorías</h2>
+      <table id="tablaAuditorias">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Empresa</th>
+            <th>Fecha</th>
+            <th>Auditor</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se cargarán las auditorías -->
+        </tbody>
+      </table>
+    </section>
+    <section class="auditorias-form">
+      <h2>Registrar nueva auditoría</h2>
+      <form id="formAuditoria">
+        <input type="number" name="empresa_id" placeholder="ID Empresa" required>
+        <input type="date" name="fecha_auditoria" required>
+        <input type="number" name="auditor_id" placeholder="ID Auditor" required>
+        <select name="tipo_verificacion" required>
+          <option value="I">I</option>
+          <option value="II">II</option>
+        </select>
+        <input type="text" name="observaciones" placeholder="Observaciones">
+        <select name="resultado" required>
+          <option value="Aprobado">Aprobado</option>
+          <option value="No Aprobado">No Aprobado</option>
+          <option value="Pendiente">Pendiente</option>
+        </select>
+        <button type="submit">Registrar</button>
+      </form>
+    </section>
+  </main>
+  <script src="../assets/auditorias.js"></script>
+</body>
+</html>

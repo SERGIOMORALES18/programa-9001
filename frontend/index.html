@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auditorías ISO 9001</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Auditorías ISO 9001 — Mockup</h1>
+    <p>Prototipo UI para planear, ejecutar y cerrar auditorías.</p>
+    <nav>
+      <button>Empresas</button>
+      <button>Auditorías</button>
+      <button>Checklists</button>
+      <button>Hallazgos</button>
+      <button>Reportes</button>
+      <button>Ajustes</button>
+    </nav>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar auditoría, empresa">
+      <a href="#">Inicio</a>
+      <a href="#">Nueva auditoría</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="auditorias-recientes">
+      <h2>Auditorías recientes</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Empresa</th>
+            <th>Alcance</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Avance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Ejemplo de datos, luego se conectará al backend -->
+          <tr>
+            <td>AUD-001</td>
+            <td>InterAgro S.A.S.</td>
+            <td>Procesos de compra y logística</td>
+            <td>2025-09-10</td>
+            <td>Programada</td>
+            <td><div class="progress"><div class="progress-bar" style="width: 40%"></div></div></td>
+          </tr>
+          <tr>
+            <td>AUD-002</td>
+            <td>RoverCrop Ltda.</td>
+            <td>Desarrollo de software</td>
+            <td>2025-08-21</td>
+            <td>En curso</td>
+            <td><div class="progress"><div class="progress-bar" style="width: 60%"></div></div></td>
+          </tr>
+          <tr>
+            <td>AUD-003</td>
+            <td>Oreca Group</td>
+            <td>Despacho y distribución</td>
+            <td>2025-07-05</td>
+            <td>Cerrada</td>
+            <td><div class="progress"><div class="progress-bar" style="width: 100%"></div></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <aside class="hallazgos-criticos">
+      <h2>Hallazgos críticos</h2>
+      <div class="hallazgo">
+        <strong>NC-001 — Control de producción insuficiente</strong> <span class="estado">Abierta</span><br>
+        <small>Cláusula 8.5 • Tipo: NC Mayor • Vence: 2025-09-30</small>
+      </div>
+      <div class="hallazgo">
+        <strong>NC-002 — Registros de competencia incompletos</strong> <span class="estado">En seguimiento</span><br>
+        <small>Cláusula 7.2 • Tipo: NC Menor • Vence: 2025-09-15</small>
+      </div>
+      <div class="hallazgo">
+        <strong>OB-003 — KPIs sin meta definida</strong> <span class="estado">Cerrada</span><br>
+        <small>Cláusula 9.1 • Tipo: Observación • Vence: 2025-08-05</small>
+      </div>
+      <a href="#">Ver todos</a>
+    </aside>
+
+    <section class="checklist">
+      <h2>Checklist rápido por cláusula</h2>
+      <details>
+        <summary>4 — 4. Contexto de la organización</summary>
+        <!-- Aquí irán los ítems del checklist -->
+      </details>
+      <details>
+        <summary>5 — 5. Liderazgo</summary>
+      </details>
+      <details>
+        <summary>6 — 6. Planificación</summary>
+      </details>
+    </section>
+
+    <section class="login">
+      <h2>Iniciar sesión</h2>
+      <form>
+        <input type="email" placeholder="Correo" required>
+        <input type="password" placeholder="Contraseña" required>
+        <button type="submit">Entrar</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

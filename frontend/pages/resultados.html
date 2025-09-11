@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados por Criterio | Auditorías ISO 9001</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Resultados por Criterio</h1>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="empresas.html">Empresas</a>
+      <a href="auditorias.html">Auditorías</a>
+      <a href="capacitaciones.html">Capacitaciones</a>
+      <a href="implementaciones.html">Implementaciones</a>
+      <a href="usuarios.html">Usuarios</a>
+      <a href="criterios.html">Criterios</a>
+    </nav>
+  </header>
+  <main>
+    <section class="resultados-list">
+      <h2>Listado de resultados</h2>
+      <table id="tablaResultados">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Auditoría</th>
+            <th>Criterio</th>
+            <th>Cumplimiento</th>
+            <th>Evidencia</th>
+            <th>Observaciones</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se cargarán los resultados -->
+        </tbody>
+      </table>
+    </section>
+    <section class="resultados-form">
+      <h2>Registrar nuevo resultado</h2>
+      <form id="formResultado">
+        <input type="number" name="auditoria_id" placeholder="ID Auditoría" required>
+        <input type="number" name="criterio_id" placeholder="ID Criterio" required>
+        <select name="cumplimiento" required>
+          <option value="Cumple">Cumple</option>
+          <option value="No Cumple">No Cumple</option>
+          <option value="Parcial">Parcial</option>
+        </select>
+        <input type="text" name="evidencia" placeholder="Evidencia">
+        <input type="text" name="observaciones" placeholder="Observaciones">
+        <button type="submit">Registrar</button>
+      </form>
+    </section>
+  </main>
+  <script src="../assets/resultados.js"></script>
+</body>
+</html>

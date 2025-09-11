@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuarios | Auditorías ISO 9001</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Usuarios</h1>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="empresas.html">Empresas</a>
+      <a href="auditorias.html">Auditorías</a>
+      <a href="capacitaciones.html">Capacitaciones</a>
+      <a href="implementaciones.html">Implementaciones</a>
+    </nav>
+  </header>
+  <main>
+    <section class="usuarios-list">
+      <h2>Listado de usuarios</h2>
+      <table id="tablaUsuarios">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Rol</th>
+            <th>Activo</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se cargarán los usuarios -->
+        </tbody>
+      </table>
+    </section>
+    <section class="usuarios-form">
+      <h2>Registrar nuevo usuario</h2>
+      <form id="formUsuario">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="email" name="correo" placeholder="Correo" required>
+        <input type="password" name="contraseña" placeholder="Contraseña" required>
+        <select name="rol" required>
+          <option value="admin">Admin</option>
+          <option value="auditor">Auditor</option>
+        </select>
+        <label><input type="checkbox" name="activo" checked> Activo</label>
+        <button type="submit">Registrar</button>
+      </form>
+    </section>
+  </main>
+  <script src="../assets/usuarios.js"></script>
+</body>
+</html>
