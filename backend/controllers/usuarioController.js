@@ -31,5 +31,24 @@ module.exports = {
       if (err) return res.status(500).json({ error: err.message });
       res.json({ message: 'Usuario eliminado' });
     });
+  },
+
+  login: (req, res) => {
+    const { correo, contraseña } = req.body;
+    if (!correo || !contraseña) {
+      return res.status(400).json({ error: 'Correo y contraseña requeridos' });
+    }
+    Usuario.getByCorreo(correo, (err, results) => {
+      if (err) return res.status(500).json({ error: err.message });
+      if (!results || results.length === 0) {
+        return res.status(401).json({ error: 'Usuario no encontrado' });
+      }
+      const usuario = results[0];
+      if (usuario.contraseña !== contraseña) {
+        return res.status(401).json({ error: 'Contraseña incorrecta' });
+      }
+      // No se usa token, solo respuesta de éxito
+      res.json({ message: 'Login exitoso', usuario: { id: usuario.id, nombre: usuario.nombre, correo: usuario.correo, rol: usuario.rol } });
+    });
   }
 };

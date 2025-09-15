@@ -1,20 +1,26 @@
+
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f8f9fa;
+  background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
   margin: 0;
   padding: 0;
   color: #222;
+  min-height: 100vh;
 }
 
 header {
   background: #fff;
   padding: 24px 32px 8px 32px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 header h1 {
   margin: 0;
   font-size: 2rem;
-  color: #2c3e50;
+  color: #218838;
+  letter-spacing: 0.5px;
 }
 header p {
   margin: 4px 0 16px 0;
@@ -22,37 +28,24 @@ header p {
 }
 nav {
   margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-nav button {
-  background: #fff;
-  border: 1px solid #ddd;
+nav a {
+  background: #f8f9fa;
+  border: 1px solid #d0e2d8;
   border-radius: 8px;
   padding: 8px 18px;
-  margin-right: 8px;
   font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-nav button:hover {
-  background: #e9ecef;
-}
-.search-bar {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 8px;
-}
-.search-bar input {
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-.search-bar a {
-  color: #2c3e50;
+  color: #218838;
   text-decoration: none;
-  margin-right: 8px;
   font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+nav a:hover {
+  background: #218838;
+  color: #fff;
 }
 
 main {
@@ -60,36 +53,74 @@ main {
   flex-wrap: wrap;
   gap: 32px;
   padding: 32px;
+  justify-content: center;
 }
-.auditorias-recientes {
-  flex: 2;
-  min-width: 480px;
+
+.card, .usuarios-list, .usuarios-form, .empresas-list, .empresas-form, .auditorias-list, .auditorias-form, .capacitaciones-list, .capacitaciones-form, .checklist, .hallazgos-criticos {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.06);
+  padding: 24px 20px 20px 20px;
+  margin-bottom: 24px;
+  min-width: 320px;
+  max-width: 700px;
+  width: 100%;
 }
-.auditorias-recientes h2 {
-  margin-top: 0;
-  font-size: 1.2rem;
-}
-.auditorias-recientes table {
+
+table {
   width: 100%;
   border-collapse: collapse;
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(44,62,80,0.04);
   margin-bottom: 16px;
 }
-.auditorias-recientes th, .auditorias-recientes td {
+th, td {
   padding: 10px 12px;
   text-align: left;
 }
-.auditorias-recientes th {
+th {
   background: #f4f4f4;
   font-weight: 600;
 }
-.auditorias-recientes tr {
+tr {
   border-bottom: 1px solid #eee;
 }
+tr:last-child {
+  border-bottom: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 8px;
+}
+input, select, textarea {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: #f8f9fa;
+}
+button, input[type="submit"] {
+  background: #218838;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+button:hover, input[type="submit"]:hover {
+  background: #18632a;
+}
+
 .progress {
-  background: #ccc;
+  background: #e0eafc;
   border-radius: 6px;
   height: 16px;
   width: 100px;
@@ -106,25 +137,16 @@ main {
 .progress-bar[data-width="60"] { width: 60%; }
 .progress-bar[data-width="100"] { width: 100%; }
 
-.hallazgos-criticos {
-  flex: 1;
-  min-width: 320px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  padding: 16px;
-  margin-bottom: 16px;
-}
-.hallazgos-criticos h2 {
-  margin-top: 0;
+.hallazgos-criticos h2, .checklist h2, .usuarios-list h2, .empresas-list h2, .auditorias-list h2, .capacitaciones-list h2 {
   font-size: 1.1rem;
+  margin-top: 0;
 }
 .hallazgo {
   background: #f8f9fa;
   border-radius: 6px;
   padding: 10px 12px;
   margin-bottom: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  box-shadow: 0 1px 4px rgba(44,62,80,0.03);
 }
 .hallazgo .estado {
   float: right;
@@ -135,64 +157,56 @@ main {
 .hallazgos-criticos a {
   display: block;
   text-align: right;
-  color: #2c3e50;
+  color: #218838;
   text-decoration: underline;
   font-size: 0.95em;
 }
 
-.checklist {
-  width: 100%;
-  margin-top: 32px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  padding: 16px;
-}
-.checklist h2 {
-  font-size: 1.1rem;
-}
-.checklist details {
-  margin-bottom: 8px;
-}
-.checklist summary {
-  font-weight: 500;
-  cursor: pointer;
+.usuarios-form, .empresas-form, .auditorias-form, .capacitaciones-form {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.login {
-  width: 320px;
-  background: #fff;
+.usuarios-list, .empresas-list, .auditorias-list, .capacitaciones-list {
+  margin-bottom: 0;
+}
+
+.usuarios-form h2, .empresas-form h2, .auditorias-form h2, .capacitaciones-form h2 {
+  margin-bottom: 8px;
+}
+
+.usuarios-form form, .empresas-form form, .auditorias-form form, .capacitaciones-form form {
+  background: #f8f9fa;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  padding: 16px;
-  margin-top: 32px;
+  padding: 18px 14px 10px 14px;
+  box-shadow: 0 1px 4px rgba(44,62,80,0.03);
 }
-.login h2 {
-  font-size: 1.1rem;
-  margin-top: 0;
+
+.usuarios-form button, .empresas-form button, .auditorias-form button, .capacitaciones-form button {
+  width: 100%;
 }
-.login form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+
+.usuarios-list table, .empresas-list table, .auditorias-list table, .capacitaciones-list table {
+  margin-bottom: 0;
 }
-.login input {
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
+
+.usuarios-list th, .empresas-list th, .auditorias-list th, .capacitaciones-list th {
+  background: #e0eafc;
 }
-.login button {
-  background: #218838;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 10px;
-  font-size: 1rem;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background 0.2s;
+
+.usuarios-list td, .empresas-list td, .auditorias-list td, .capacitaciones-list td {
+  background: #fff;
 }
-.login button:hover {
-  background: #18632a;
+
+.usuarios-list tr:nth-child(even), .empresas-list tr:nth-child(even), .auditorias-list tr:nth-child(even), .capacitaciones-list tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.usuarios-list tr:hover, .empresas-list tr:hover, .auditorias-list tr:hover, .capacitaciones-list tr:hover {
+  background: #e0eafc;
+}
+
+.usuarios-form input, .empresas-form input, .auditorias-form input, .capacitaciones-form input,
+.usuarios-form select, .empresas-form select, .auditorias-form select, .capacitaciones-form select {
+  margin-bottom: 0;
 }

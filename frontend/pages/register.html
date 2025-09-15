@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iniciar sesión | Auditorías ISO 9001</title>
+  <title>Registro | Auditorías ISO 9001</title>
   <link rel="stylesheet" href="../assets/styles.css">
   <style>
     body {
@@ -13,36 +13,36 @@
       align-items: center;
       justify-content: center;
     }
-    .login-container {
+    .register-container {
       background: #fff;
       border-radius: 16px;
       box-shadow: 0 4px 24px rgba(44,62,80,0.10);
       padding: 40px 32px 32px 32px;
-      max-width: 380px;
+      max-width: 400px;
       width: 100%;
       text-align: center;
     }
-    .login-container h1 {
+    .register-container h1 {
       margin-bottom: 8px;
       color: #218838;
       font-size: 2rem;
     }
-    .login-container p {
+    .register-container p {
       color: #555;
       margin-bottom: 24px;
     }
-    .login-container form {
+    .register-container form {
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
-    .login-container input {
+    .register-container input, .register-container select {
       padding: 10px 14px;
       border-radius: 8px;
       border: 1px solid #ccc;
       font-size: 1rem;
     }
-    .login-container button {
+    .register-container button {
       background: #218838;
       color: #fff;
       border: none;
@@ -54,19 +54,19 @@
       margin-top: 8px;
       transition: background 0.2s;
     }
-    .login-container button:hover {
+    .register-container button:hover {
       background: #18632a;
     }
-    .login-container .register-link {
+    .register-container .login-link {
       margin-top: 18px;
       font-size: 0.98em;
     }
-    .login-container .register-link a {
+    .register-container .login-link a {
       color: #218838;
       text-decoration: underline;
       font-weight: 500;
     }
-    #loginMsg {
+    #registerMsg {
       margin-top: 10px;
       min-height: 22px;
       font-size: 1em;
@@ -74,19 +74,25 @@
   </style>
 </head>
 <body>
-  <div class="login-container">
-    <h1>Auditorías ISO 9001</h1>
-    <p>Accede a la plataforma para gestionar auditorías, empresas y más.</p>
-    <form id="formLogin">
-      <input type="email" name="correo" placeholder="Correo electrónico" required autofocus>
+  <div class="register-container">
+    <h1>Crear cuenta</h1>
+    <p>Regístrate para acceder a la plataforma de auditorías.</p>
+    <form id="formUsuario">
+      <input type="text" name="nombre" placeholder="Nombre" required>
+      <input type="email" name="correo" placeholder="Correo electrónico" required>
       <input type="password" name="contraseña" placeholder="Contraseña" required>
-      <button type="submit">Iniciar sesión</button>
+      <select name="rol" required>
+        <option value="admin">Admin</option>
+        <option value="auditor">Auditor</option>
+      </select>
+      <label style="text-align:left;"><input type="checkbox" name="activo" checked> Activo</label>
+      <button type="submit">Registrarme</button>
     </form>
-    <div id="loginMsg"></div>
-    <div class="register-link">
-      ¿No tienes cuenta? <a href="register.html">Regístrate aquí</a>
+    <div id="registerMsg"></div>
+    <div class="login-link">
+      ¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a>
     </div>
   </div>
-  <script src="../assets/login.js"></script>
+  <script src="../assets/usuarios.js"></script>
 </body>
 </html>

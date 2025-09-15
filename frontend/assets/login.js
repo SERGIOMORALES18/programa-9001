@@ -4,19 +4,28 @@ document.getElementById('formLogin').addEventListener('submit', function(e) {
   e.preventDefault();
   const form = e.target;
   const data = Object.fromEntries(new FormData(form));
-  fetch('http://localhost:3001/usuarios')
+  fetch('http://localhost:3001/usuarios/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
     .then(res => res.json())
-    .then(usuarios => {
-      const user = usuarios.find(u => u.correo === data.correo && u.contraseña === data.contraseña && u.activo);
+    .then(respuesta => {
       const msg = document.getElementById('loginMsg');
-      if (user) {
-        msg.textContent = '¡Bienvenido, ' + user.nombre + '!';
+      if (respuesta.usuario) {
+        msg.textContent = '¡Bienvenido, ' + respuesta.usuario.nombre + '!';
         msg.style.color = 'green';
-        // Aquí podrías redirigir a la página principal o guardar sesión
+        // Guardar usuario en localStorage
+        localStorage.setItem('usuario', JSON.stringify(respuesta.usuario));
         setTimeout(() => window.location.href = '../index.html', 1200);
       } else {
-        msg.textContent = 'Usuario o contraseña incorrectos, o usuario inactivo.';
+        msg.textContent = respuesta.error || 'Usuario o contraseña incorrectos, o usuario inactivo.';
         msg.style.color = 'red';
       }
+    })
+    .catch(() => {
+      const msg = document.getElementById('loginMsg');
+      msg.textContent = 'Error de conexión con el servidor.';
+      msg.style.color = 'red';
     });
 });
