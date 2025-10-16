@@ -1,0 +1,26 @@
+[
+  {
+    "nombre": "sergio",
+    "correo": "symoralesr@academia.usbbog.edu.co",
+    "contraseña": "yasemit00718@",
+    "rol": "admin",
+    "activo": true,
+    "id": 1
+  },
+  {
+    "nombre": "sergio",
+    "correo": "symoralesr@academia.usbbog.edu.co",
+    "contraseña": "yasemit00718",
+    "rol": "admin",
+    "activo": true,
+    "id": 2
+  },
+  {
+    "nombre": "carlos",
+    "correo": "cemoyac@academia.usbbog.edu.co",
+    "contraseña": "Carlosrolo3",
+    "rol": "admin",
+    "activo": true,
+    "id": 3
+  }
+]
