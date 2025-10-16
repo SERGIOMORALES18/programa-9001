@@ -9,13 +9,10 @@
 </head>
 <body>
   <header>
-    <h1>Capacitaciones</h1>
-    <nav>
-      <a href="../index.html">Inicio</a>
-      <a href="empresas.html">Empresas</a>
-      <a href="auditorias.html">Auditorías</a>
-      <a href="implementaciones.html">Implementaciones</a>
-      <a href="usuarios.html">Usuarios</a>
+    <h1 style="color:#218838;font-size:2.2rem;font-weight:800;letter-spacing:1px;">Capacitaciones</h1>
+    <nav style="margin-top:10px;display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="usuarios.html" class="nav-btn">Usuarios</a>
+  <a href="dashboard.html" class="nav-btn" id="volverPanel">Volver al Panel</a>
     </nav>
   </header>
   <main>
@@ -50,5 +47,11 @@
     </section>
   </main>
   <script src="../assets/capacitaciones.js"></script>
+  <script>
+    document.getElementById('volverPanel').onclick = function(e) {
+      e.preventDefault();
+      window.location.href = 'dashboard.html';
+    };
+  </script>
 </body>
 </html>

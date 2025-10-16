@@ -1,117 +1,124 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Auditorías ISO 9001</title>
+  <title>Panel Principal | Auditorías ISO 9001</title>
   <link rel="stylesheet" href="assets/styles.css">
-  <script src="assets/auth.js"></script>
+  <script>
+    // Redirigir automáticamente al login si no está autenticado
+    document.addEventListener('DOMContentLoaded', function() {
+      if (!localStorage.getItem('usuario')) {
+        window.location.href = 'pages/login.html';
+      }
+    });
+  </script>
+  <style>
+    body {
+      background: linear-gradient(120deg, #e3f2fd, #bbdefb);
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 900px;
+      padding: 20px;
+      background: #1565c0;
+      color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    header button {
+      background: #fff;
+      color: #1565c0;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    header button:hover {
+      background: #e3f2fd;
+      transform: scale(1.05);
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .dashboard-btn {
+      background: #1565c0;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 15px 40px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      width: auto;
+      min-width: 220px;
+    }
+    .dashboard-btn:hover {
+      background: #0d47a1;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Auditorías ISO 9001 — Mockup</h1>
-    <p>Prototipo UI para planear, ejecutar y cerrar auditorías.</p>
-    <nav>
-      <a href="pages/empresas.html">Empresas</a>
-      <a href="pages/auditorias.html">Auditorías</a>
-  <a href="pages/criterios.html">Criterios</a>
-  <a href="pages/checklist.html">Checklist ISO 9001</a>
-      <a href="pages/acciones-mejora.html">Acciones de Mejora</a>
-      <a href="pages/documentos.html">Documentos</a>
-      <a href="pages/capacitaciones.html">Capacitaciones</a>
-      <a href="pages/implementaciones.html">Implementaciones</a>
-      <a href="pages/usuarios.html">Usuarios</a>
-    </nav>
-    <div class="search-bar">
-      <input type="text" placeholder="Buscar auditoría, empresa">
-      <a href="#">Inicio</a>
-      <a href="#">Nueva auditoría</a>
-    </div>
+  <header style="background:transparent;box-shadow:none;padding-top:40px;">
+    <h1 style="font-size:2.5rem;color:#218838;font-weight:800;letter-spacing:1px;margin-bottom:0;">Panel Principal</h1>
+    <button id="logoutBtn" style="margin-left:auto;">Cerrar sesión</button>
   </header>
-
   <main>
-    <section class="auditorias-recientes">
-      <h2>Auditorías recientes</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Empresa</th>
-            <th>Alcance</th>
-            <th>Fecha</th>
-            <th>Estado</th>
-            <th>Avance</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Ejemplo de datos, luego se conectará al backend -->
-          <tr>
-            <td>AUD-001</td>
-            <td>InterAgro S.A.S.</td>
-            <td>Procesos de compra y logística</td>
-            <td>2025-09-10</td>
-            <td>Programada</td>
-            <td><div class="progress"><div class="progress-bar" style="width: 40%"></div></div></td>
-          </tr>
-          <tr>
-            <td>AUD-002</td>
-            <td>RoverCrop Ltda.</td>
-            <td>Desarrollo de software</td>
-            <td>2025-08-21</td>
-            <td>En curso</td>
-            <td><div class="progress"><div class="progress-bar" style="width: 60%"></div></div></td>
-          </tr>
-          <tr>
-            <td>AUD-003</td>
-            <td>Oreca Group</td>
-            <td>Despacho y distribución</td>
-            <td>2025-07-05</td>
-            <td>Cerrada</td>
-            <td><div class="progress"><div class="progress-bar" style="width: 100%"></div></div></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <aside class="hallazgos-criticos">
-      <h2>Hallazgos críticos</h2>
-      <div class="hallazgo">
-        <strong>NC-001 — Control de producción insuficiente</strong> <span class="estado">Abierta</span><br>
-        <small>Cláusula 8.5 • Tipo: NC Mayor • Vence: 2025-09-30</small>
-      </div>
-      <div class="hallazgo">
-        <strong>NC-002 — Registros de competencia incompletos</strong> <span class="estado">En seguimiento</span><br>
-        <small>Cláusula 7.2 • Tipo: NC Menor • Vence: 2025-09-15</small>
-      </div>
-      <div class="hallazgo">
-        <strong>OB-003 — KPIs sin meta definida</strong> <span class="estado">Cerrada</span><br>
-        <small>Cláusula 9.1 • Tipo: Observación • Vence: 2025-08-05</small>
-      </div>
-      <a href="#">Ver todos</a>
-    </aside>
-
-    <section class="checklist">
-      <h2>Checklist rápido por cláusula</h2>
-      <details>
-        <summary>4 — 4. Contexto de la organización</summary>
-        <!-- Aquí irán los ítems del checklist -->
-      </details>
-      <details>
-        <summary>5 — 5. Liderazgo</summary>
-      </details>
-      <details>
-        <summary>6 — 6. Planificación</summary>
-      </details>
-    </section>
-
-    <section class="login">
-      <h2>Iniciar sesión</h2>
-      <form>
-        <input type="email" placeholder="Correo" required>
-        <input type="password" placeholder="Contraseña" required>
-        <button type="submit">Entrar</button>
-      </form>
-    </section>
+    <div class="dashboard-botones" style="width:100%;max-width:700px;display:flex;flex-direction:column;align-items:center;gap:32px;margin-top:60px;">
+      <button class="dashboard-btn" onclick="location.href='pages/auditorias.html'" style="width:100%;max-width:400px;">
+        Auditoría
+      </button>
+      <button class="dashboard-btn" onclick="location.href='pages/capacitaciones.html'" style="width:100%;max-width:400px;">
+        Capacitación
+      </button>
+      <button class="dashboard-btn" onclick="location.href='pages/implementaciones.html'" style="width:100%;max-width:400px;">
+        Implementación
+      </button>
+    </div>
   </main>
+  <script>
+    // Animación de entrada para los botones
+    document.querySelectorAll('.dashboard-btn').forEach((btn, i) => {
+      btn.style.opacity = '0';
+      btn.style.transform = 'translateY(40px) scale(0.96)';
+      setTimeout(() => {
+        btn.style.transition = 'opacity 0.7s cubic-bezier(.77,0,.18,1), transform 0.7s cubic-bezier(.77,0,.18,1)';
+        btn.style.opacity = '1';
+        btn.style.transform = 'translateY(0) scale(1)';
+      }, 300 + i * 200);
+    });
+    document.getElementById('logoutBtn').onclick = function() {
+      localStorage.removeItem('usuario');
+      window.location.href = 'pages/login.html';
+    };
+  </script>
 </body>
 </html>

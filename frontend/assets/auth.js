@@ -5,12 +5,7 @@
   const usuario = localStorage.getItem('usuario');
   if (!usuario) {
     // Redirigir correctamente según la ubicación
-    const path = window.location.pathname;
-    if (path.includes('/frontend/pages/')) {
-      window.location.href = 'login.html';
-    } else {
-      window.location.href = 'pages/login.html';
-    }
+    window.location.href = '/pages/login.html';
     return;
   }
   // Mostrar nombre de usuario en header si existe
@@ -24,12 +19,7 @@
     header.appendChild(div);
     document.getElementById('logoutBtn').onclick = function() {
       localStorage.removeItem('usuario');
-      const path = window.location.pathname;
-      if (path.includes('/frontend/pages/')) {
-        window.location.href = 'login.html';
-      } else {
-        window.location.href = 'pages/login.html';
-      }
+      window.location.href = '/pages/login.html';
     };
   }
 })();

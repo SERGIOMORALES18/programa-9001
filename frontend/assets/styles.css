@@ -210,3 +210,29 @@ button:hover, input[type="submit"]:hover {
 .usuarios-form select, .empresas-form select, .auditorias-form select, .capacitaciones-form select {
   margin-bottom: 0;
 }
+
+/* Dashboard principal */
+.dashboard-botones {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+.dashboard-btn {
+  background: linear-gradient(120deg, #218838 0%, #18632a 100%);
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 40px 60px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  margin: 10px;
+}
+.dashboard-btn:hover {
+  background: linear-gradient(120deg, #18632a 0%, #218838 100%);
+  transform: translateY(-4px) scale(1.04);
+}

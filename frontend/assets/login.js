@@ -17,7 +17,7 @@ document.getElementById('formLogin').addEventListener('submit', function(e) {
         msg.style.color = 'green';
         // Guardar usuario en localStorage
         localStorage.setItem('usuario', JSON.stringify(respuesta.usuario));
-        setTimeout(() => window.location.href = '../index.html', 1200);
+        setTimeout(() => window.location.href = '/pages/dashboard.html', 1200);
       } else {
         msg.textContent = respuesta.error || 'Usuario o contraseña incorrectos, o usuario inactivo.';
         msg.style.color = 'red';
