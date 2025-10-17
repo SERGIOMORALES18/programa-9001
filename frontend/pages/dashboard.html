@@ -155,7 +155,11 @@
       <button id="logoutBtn" style="margin-left:auto;">Cerrar sesión</button>
     </header>
     <main>
-      <div class="dashboard-botones" style="width:100%;max-width:700px;display:flex;flex-direction:column;align-items:center;gap:32px;margin-top:60px;">
+      <div id="iso-selection" class="dashboard-botones" style="width:100%;max-width:700px;display:flex;flex-direction:column;align-items:center;gap:32px;margin-top:60px;">
+        <button class="dashboard-btn" id="btn-iso-27001" style="width:100%;max-width:400px;">ISO 27001</button>
+        <button class="dashboard-btn" id="btn-iso-9001" style="width:100%;max-width:400px;">ISO 9001</button>
+      </div>
+      <div id="iso-9001-section" class="dashboard-botones" style="width:100%;max-width:700px;display:none;flex-direction:column;align-items:center;gap:32px;margin-top:60px;">
         <button class="dashboard-btn" onclick="location.href='auditorias.html'" style="width:100%;max-width:400px;">
           Auditoría
         </button>
@@ -167,6 +171,35 @@
         </button>
       </div>
     </main>
+    <script>
+      // Animación de entrada para los botones
+      function animateBtns(btns) {
+        btns.forEach((btn, i) => {
+          btn.style.opacity = '0';
+          btn.style.transform = 'translateY(40px) scale(0.96)';
+          setTimeout(() => {
+            btn.style.transition = 'opacity 0.7s cubic-bezier(.77,0,.18,1), transform 0.7s cubic-bezier(.77,0,.18,1)';
+            btn.style.opacity = '1';
+            btn.style.transform = 'translateY(0) scale(1)';
+          }, 300 + i * 200);
+        });
+      }
+      animateBtns(Array.from(document.querySelectorAll('#iso-selection .dashboard-btn')));
+
+      document.getElementById('btn-iso-9001').onclick = function() {
+        document.getElementById('iso-selection').style.display = 'none';
+        const section = document.getElementById('iso-9001-section');
+        section.style.display = 'flex';
+        animateBtns(Array.from(section.querySelectorAll('.dashboard-btn')));
+      };
+      document.getElementById('btn-iso-27001').onclick = function() {
+        alert('Próximamente disponible: ISO 27001');
+      };
+      document.getElementById('logoutBtn').onclick = function() {
+        localStorage.removeItem('usuario');
+        window.location.href = 'login.html';
+      };
+    </script>
     <script>
       // Animación de entrada para los botones
       document.querySelectorAll('.dashboard-btn').forEach((btn, i) => {

@@ -8,38 +8,38 @@
   <script src="../assets/auth.js"></script>
 </head>
 <body>
-  <main style="display:flex;flex-direction:row;justify-content:center;align-items:flex-start;min-height:80vh;background:linear-gradient(120deg,#e3f2fd,#bbdefb);gap:40px;">
-    <aside style="position:sticky;top:40px;align-self:flex-start;min-width:260px;max-width:320px;display:flex;flex-direction:column;align-items:center;background:#fff;border-radius:24px;box-shadow:0 8px 32px rgba(44,62,80,0.12);padding:32px 18px;margin-top:40px;">
+  <main class="wizard-layout" style="min-height:90vh;background:linear-gradient(120deg,#e3f2fd 0%,#bbdefb 100%);padding:48px 36px;">
+  <aside class="aside-card" style="position:sticky;top:40px;align-self:flex-start;min-width:260px;max-width:320px;display:flex;flex-direction:column;align-items:center;background:#fff;border-radius:24px;box-shadow:0 8px 32px rgba(44,62,80,0.10);padding:36px 22px 28px 22px;margin-top:40px;">
       <h1 style="color:#218838;font-size:2.1rem;font-weight:800;letter-spacing:1px;margin-bottom:24px;text-align:center;">Auditorías</h1>
       <a href="dashboard.html" class="dashboard-btn" id="volverPanel" style="margin-bottom:0;width:100%;">Volver al Panel</a>
     </aside>
-    <div class="wizard-container" style="max-width:520px;width:100%;margin:auto;box-shadow:0 8px 32px rgba(44,62,80,0.18);border-radius:24px;padding:40px 32px;">
-      <div class="wizard-progress" style="display:flex;align-items:center;gap:12px;margin-bottom:32px;">
-        <div class="wizard-step active">1</div>
-        <div class="wizard-bar"></div>
-        <div class="wizard-step">2</div>
-        <div class="wizard-bar"></div>
-        <div class="wizard-step">3</div>
-        <div class="wizard-bar"></div>
-        <div class="wizard-step">4</div>
-        <div class="wizard-bar"></div>
-        <div class="wizard-step">5</div>
-        <div class="wizard-bar"></div>
-        <div class="wizard-step">6</div>
+  <div class="wizard-container" style="width:100%;margin:auto;box-shadow:0 8px 32px rgba(44,62,80,0.15);border-radius:28px;padding:48px 36px 36px 36px;">
+  <div class="wizard-progress" style="display:flex;align-items:center;gap:16px;margin-bottom:36px;justify-content:center;">
+  <div class="wizard-step active">1</div>
+  <div class="wizard-bar"></div>
+  <div class="wizard-step">2</div>
+  <div class="wizard-bar"></div>
+  <div class="wizard-step">3</div>
+  <div class="wizard-bar"></div>
+  <div class="wizard-step">4</div>
+  <div class="wizard-bar"></div>
+  <div class="wizard-step">5</div>
+  <div class="wizard-bar"></div>
+  <div class="wizard-step">6</div>
       </div>
       <div id="wizard-steps">
         <section class="wizard-step-content" id="step1">
           <h2>Paso 1: Registrar nueva auditoría</h2>
-          <form id="formAuditoria">
-            <input type="number" name="empresa_id" placeholder="ID Empresa" required>
-            <input type="date" name="fecha_auditoria" required>
-            <input type="number" name="auditor_id" placeholder="ID Auditor" required>
-            <select name="tipo_verificacion" required>
+          <form id="formAuditoria" class="form-panel-right">
+            <input id="empresa_id" name="empresa_id" type="number" placeholder="ID Auditoría / Empresa" required>
+            <input id="fecha_auditoria" name="fecha_auditoria" type="date" required>
+            <input id="auditor_id" name="auditor_id" type="number" placeholder="ID Auditor" required>
+            <select id="tipo_verificacion" name="tipo_verificacion" required>
               <option value="I">I</option>
               <option value="II">II</option>
             </select>
-            <input type="text" name="observaciones" placeholder="Observaciones">
-            <select name="resultado" required>
+            <input id="observacionesPaso1" name="observaciones_paso1" type="text" placeholder="Observaciones">
+            <select id="resultado" name="resultado" required>
               <option value="Aprobado">Aprobado</option>
               <option value="No Aprobado">No Aprobado</option>
               <option value="Pendiente">Pendiente</option>
@@ -63,13 +63,13 @@
                 </tr>
               </thead>
               <tbody>
-                <tr><td>4.1</td><td>Contexto de la organización</td><td><input type="checkbox"></td></tr>
-                <tr><td>5.1</td><td>Liderazgo</td><td><input type="checkbox"></td></tr>
-                <tr><td>6.1</td><td>Planificación</td><td><input type="checkbox"></td></tr>
-                <tr><td>7.1</td><td>Apoyo</td><td><input type="checkbox"></td></tr>
-                <tr><td>8.1</td><td>Operación</td><td><input type="checkbox"></td></tr>
-                <tr><td>9.1</td><td>Evaluación del desempeño</td><td><input type="checkbox"></td></tr>
-                <tr><td>10.1</td><td>Mejora</td><td><input type="checkbox"></td></tr>
+                <tr><td>4.1</td><td>Contexto de la organización</td><td><input name="criterio_4_1" type="checkbox"></td></tr>
+                <tr><td>5.1</td><td>Liderazgo</td><td><input name="criterio_5_1" type="checkbox"></td></tr>
+                <tr><td>6.1</td><td>Planificación</td><td><input name="criterio_6_1" type="checkbox"></td></tr>
+                <tr><td>7.1</td><td>Apoyo</td><td><input name="criterio_7_1" type="checkbox"></td></tr>
+                <tr><td>8.1</td><td>Operación</td><td><input name="criterio_8_1" type="checkbox"></td></tr>
+                <tr><td>9.1</td><td>Evaluación del desempeño</td><td><input name="criterio_9_1" type="checkbox"></td></tr>
+                <tr><td>10.1</td><td>Mejora</td><td><input name="criterio_10_1" type="checkbox"></td></tr>
               </tbody>
             </table>
             <h3 style="margin-top:24px;">Listado de criterios</h3>
@@ -98,7 +98,7 @@
         <section class="wizard-step-content" id="step3" style="display:none;">
           <h2>Paso 3: Registrar resultados y evidencias</h2>
           <p>Para cada criterio, registra si cumple, observaciones y adjunta evidencias.</p>
-          <table style="width:100%;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.04);margin-bottom:16px;">
+          <table id="resultadosCriterios" style="width:100%;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(44,62,80,0.04);margin-bottom:16px;">
             <thead>
               <tr>
                 <th>ID</th>
@@ -113,40 +113,40 @@
                 <td>1</td>
                 <td>Control de documentos</td>
                 <td>
-                  <select>
+                  <select name="cumplimiento_1">
                     <option value="Cumple">Cumple</option>
                     <option value="No Cumple">No Cumple</option>
                     <option value="Parcial">Parcial</option>
                   </select>
                 </td>
-                <td><input type="text" placeholder="Evidencia"></td>
-                <td><input type="text" placeholder="Observaciones"></td>
+                <td><input name="evidencia_1" type="text" placeholder="Evidencia"></td>
+                <td><input name="observaciones_1" type="text" placeholder="Observaciones"></td>
               </tr>
               <tr>
                 <td>2</td>
                 <td>Competencia</td>
                 <td>
-                  <select>
+                  <select name="cumplimiento_2">
                     <option value="Cumple">Cumple</option>
                     <option value="No Cumple">No Cumple</option>
                     <option value="Parcial">Parcial</option>
                   </select>
                 </td>
-                <td><input type="text" placeholder="Evidencia"></td>
-                <td><input type="text" placeholder="Observaciones"></td>
+                <td><input name="evidencia_2" type="text" placeholder="Evidencia"></td>
+                <td><input name="observaciones_2" type="text" placeholder="Observaciones"></td>
               </tr>
               <tr>
                 <td>3</td>
                 <td>Seguimiento y medición</td>
                 <td>
-                  <select>
+                  <select name="cumplimiento_3">
                     <option value="Cumple">Cumple</option>
                     <option value="No Cumple">No Cumple</option>
                     <option value="Parcial">Parcial</option>
                   </select>
                 </td>
-                <td><input type="text" placeholder="Evidencia"></td>
-                <td><input type="text" placeholder="Observaciones"></td>
+                <td><input name="evidencia_3" type="text" placeholder="Evidencia"></td>
+                <td><input name="observaciones_3" type="text" placeholder="Observaciones"></td>
               </tr>
               <!-- Puedes agregar más resultados aquí -->
             </tbody>
@@ -182,7 +182,8 @@
         <section class="wizard-step-content" id="step6" style="display:none;">
           <h2>Paso 6: Cierre y resumen</h2>
           <p>Revisa el resumen de la auditoría antes de finalizar.</p>
-          <textarea placeholder="Resumen final..." style="width:100%;height:80px;"></textarea>
+          <textarea id="resumenFinal" placeholder="Resumen final..." style="width:100%;height:80px;"></textarea>
+          <div id="wizardNotification" style="margin:12px 0;min-height:20px;color:#0b5; font-weight:600;"></div>
           <div style="display:flex;justify-content:space-between;gap:12px;">
             <button type="button" id="prevStep6" class="dashboard-btn">Anterior</button>
             <button type="button" id="finishWizard" class="dashboard-btn">Finalizar auditoría</button>
@@ -222,99 +223,7 @@
     };
     setStep(1);
   </script>
-  <style>
-    .wizard-container {
-      background: #fff;
-      border-radius: 24px;
-      box-shadow: 0 8px 32px rgba(44,62,80,0.18);
-      padding: 40px 32px;
-      margin-top: 0;
-      min-width: 340px;
-      max-width: 520px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .wizard-progress {
-      justify-content: center;
-    }
-    .wizard-step {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: #e0eafc;
-      color: #218838;
-      font-weight: 700;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid #218838;
-      transition: background 0.2s, color 0.2s;
-    }
-    .wizard-step.active {
-      background: #218838;
-      color: #fff;
-      border-color: #218838;
-    }
-    .wizard-bar {
-      flex: 1;
-      height: 4px;
-      background: #e0eafc;
-      border-radius: 2px;
-      margin: 0 2px;
-    }
-    .wizard-step-content {
-      margin-bottom: 18px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .dashboard-btn {
-      min-width: 120px;
-      font-size: 1.1rem;
-      padding: 12px 32px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(44,62,80,0.08);
-    }
-    form input, form select, form textarea {
-      width: 100%;
-      font-size: 1.1rem;
-      margin-bottom: 14px;
-      padding: 12px 14px;
-      border-radius: 10px;
-      border: 1px solid #d0e2d8;
-      background: #f8f9fa;
-      box-sizing: border-box;
-    }
-    form input[type="date"] {
-      min-width: 180px;
-    }
-    table {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(44,62,80,0.04);
-      margin-bottom: 16px;
-      font-size: 1.05rem;
-      background: #fff;
-    }
-    th, td {
-      padding: 10px 12px;
-      text-align: left;
-    }
-    th {
-      background: #e0eafc;
-      font-weight: 600;
-    }
-    tr {
-      border-bottom: 1px solid #eee;
-    }
-    tr:last-child {
-      border-bottom: none;
-    }
-  </style>
+  <!-- El CSS se movió a assets/styles.css -->
   <script>
     document.getElementById('volverPanel').onclick = function(e) {
       e.preventDefault();
