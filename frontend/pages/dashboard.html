@@ -193,7 +193,7 @@
         animateBtns(Array.from(section.querySelectorAll('.dashboard-btn')));
       };
       document.getElementById('btn-iso-27001').onclick = function() {
-        alert('Próximamente disponible: ISO 27001');
+        window.location.href = 'checklist-iso27001.html';
       };
       document.getElementById('logoutBtn').onclick = function() {
         localStorage.removeItem('usuario');
